@@ -1,0 +1,31 @@
+.serie-numbers-container {
+  padding: 0 15px 0 15px;
+  width: 100%;
+  background-color: #f1f2f3;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 115px;
+  justify-content: space-around;
+  align-items: center;
+}
+.serie-numbers-container > h3 {
+  color: #191e38;
+  font-size: calc(0.9em + 0.5vw);
+}
+.serie-numbers-container > p {
+  color: #191e38;
+  font-weight: 700;
+  font-size: calc(0.8em + 0.5vw);
+}
+
+@media screen and (max-width: 1400px) and (min-width: 690px) {
+  .serie-numbers-container {
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .serie-numbers-container {
+    gap: 10px;
+  }
+}

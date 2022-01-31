@@ -1,0 +1,12 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #191e38;
+  padding: 10px 3vw 10px 0;
+}
+@media only screen and (max-width: 690px) {
+  .navbar {
+    justify-content: center;
+  }
+}

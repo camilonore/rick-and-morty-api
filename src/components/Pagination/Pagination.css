@@ -1,0 +1,7 @@
+.pagination-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 15px;
+  margin: 40px 0 20px 25px;
+}

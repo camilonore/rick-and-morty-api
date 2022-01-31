@@ -1,0 +1,18 @@
+input {
+  height: 25px;
+  width: 80%;
+  border: 3px solid #191e38;
+  color: #191e38;
+}
+.search-bar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 25px 0 25px 0;
+}
+.search-bar button {
+  font-size: 22px;
+}

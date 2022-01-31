@@ -1,0 +1,49 @@
+.card-container {
+  height: -webkit-fill-available;
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  gap: 10px;
+  max-height: 146px;
+}
+.card-container .character-details h3 {
+  margin: 0;
+  font-size: calc(0.8em + 0.5vw);
+}
+.card-container .character-details .status {
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+.card-container .character-details .species {
+  margin: 0;
+}
+.card-container .character-details .button-container {
+  margin: 0%;
+  padding: 0%;
+}
+.character-image {
+  background: #f1f2f3;
+}
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.character-details {
+  padding: 10px;
+  background-color: #f1f2f3;
+  color: #191e38;
+}
+.character-details > p {
+  font-weight: 700;
+  font-size: calc(0.5em + 0.5vw);
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.status {
+  display: flex;
+  align-items: center;
+}
