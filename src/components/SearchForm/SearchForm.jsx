@@ -20,7 +20,7 @@ export default function SearchForm({ setPage }) {
     <div className='form-container'>
       <SearchIcon height='18px' color='#c3c3c3'/>
       <form onSubmit={handleSubmit} className='search-bar'>
-        <input type='text' required placeholder='Search...'/>
+        <input type='text' required placeholder='Search a character...'/>
       </form>
     </div>
   );

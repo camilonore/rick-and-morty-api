@@ -1,6 +1,7 @@
 .serie-numbers-container {
+  border-top: 1px solid;
+  margin-top: 40px;
   width: 100%;
-  background-color: #f1f2f3;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

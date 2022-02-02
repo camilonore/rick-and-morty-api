@@ -8,7 +8,7 @@ export default function Header() {
       <Link to='/' className='logo'>
         <img src='/rickLogo.png' alt='Rick and Morty' />
       </Link>
-      <a href='#characters'>Footer</a>
+      <a href='#footer'>Footer</a>
     </header>
   );
 }

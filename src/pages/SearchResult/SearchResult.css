@@ -8,3 +8,9 @@
   margin-top: 50px;
   gap: 15px;
 }
+.search-bar {
+  width: 100%;
+  display: flex;
+  margin: 10vh 0;
+  justify-content: center;
+}

@@ -10,6 +10,7 @@
   animation: load7 1.8s infinite ease-in-out;
 }
 .loader {
+  grid-column: 1/3;
   color: #191e38;
   font-size: 10px;
   margin: 80px auto;

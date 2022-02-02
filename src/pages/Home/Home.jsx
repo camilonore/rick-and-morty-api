@@ -30,20 +30,22 @@ export default function Home() {
         <SearchForm />
       </div>
       <div className='home-container'>
-        <div className='main-container'>
+        <section className='main-container'>
           {loading ? (
             <Spinner />
           ) : (
-            (
-              <>
-                <ListOfCharacters characters={characters}/>
-                <SelectedCharacter />
-              </>
-            )
+            <>
+              <ListOfCharacters characters={characters} />
+              <SelectedCharacter />
+            </>
           )}
-        </div>
-        <Pagination page={page} setPage={setPage} name={undefined} />
-        <SerieInNumbers />
+        </section>
+        {loading ? (
+          ''
+        ) : (
+          <Pagination page={page} setPage={setPage} name={undefined} />
+        )}
+        <SerieInNumbers/>
       </div>
     </>
   );

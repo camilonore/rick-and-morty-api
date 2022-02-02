@@ -20,8 +20,8 @@ export default function Pagination({ page, setPage, name }) {
 
   return (
     <div className='pagination-container'>
-      {page > 1 ? <Button onClick={hanldePrevious}>Anterior</Button> : ''}
-      {page < maxPage ? <Button onClick={hanldeNext}>Siguiente</Button> : ''}
+      {page > 1 ? <Button onClick={hanldePrevious}>Previous</Button> : ''}
+      {page < maxPage ? <Button onClick={hanldeNext}>Next</Button> : ''}
     </div>
   );
 }
