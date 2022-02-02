@@ -1,18 +1,24 @@
-input {
-  height: 25px;
-  width: 80%;
-  border: 3px solid #191e38;
-  color: #191e38;
+.search-bar > input {
+  height: 20px;
+  width: 25vw;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 15px;
+  margin-left: 10px;
 }
-.search-bar {
-  width: 100%;
+.form-container {
+  width: fit-content;
+  border: 1px solid #c3c3c3;
+  border-radius: 50px;
+  background-color: #fff;
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 25px 0 25px 0;
+  align-items: center;
+  height: 30px;
+  padding: 10px 15px;
 }
-.search-bar button {
-  font-size: 22px;
+@media only screen and (max-width: 690px) {
+  .search-bar > input {
+    width: 100%;
+  }
 }

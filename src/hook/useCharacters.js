@@ -3,7 +3,11 @@ import getData from '../services/getData';
 import CharactersContext from '../context/CharactersContext';
 
 export function useCharacters(
-  { section, page, name } = { section: null, page: null, name: false }
+  { section, page, name } = {
+    section: undefined,
+    page: undefined,
+    name: undefined,
+  }
 ) {
   const { characters, setCharacters } = useContext(CharactersContext);
   const [loading, setLoading] = useState(true);
@@ -16,6 +20,7 @@ export function useCharacters(
           setLoading(false);
           setCharacters([]);
         } else {
+          console.log(character.data.results);
           setCharacters(character.data.results);
           setLoading(false);
         }

@@ -32,19 +32,34 @@ export default function SelectedCharacter() {
       <button className='close-modal' onClick={handleCloseModal}>
         &times;
       </button>
-      <section className='detail-main-section'>
-        <h3 className='title'>Detalle</h3>
-        <img
-          className='character-image'
-          src={selectedCharacter?.image}
-          alt={selectedCharacter?.name}
-        />
+      <img
+        className='selected-character-image'
+        src={selectedCharacter?.image}
+        alt={selectedCharacter?.name}
+      />
+      <div className='details-container' id='characters'>
         <h3>{selectedCharacter?.name}</h3>
-      </section>
-      <p>- {selectedCharacter?.gender}</p>
-      <p>- {selectedCharacter?.origin?.name}</p>
-      <p>- {selectedCharacter?.location?.name}</p>
-      <p className='episodes'>- {selectedCharacter?.episode.length} episodes</p>
+        <p>
+          <span className='character-span'>Gender:</span>{' '}
+          {selectedCharacter?.gender}
+        </p>
+        <p>
+          <span className='character-span'>Origin:</span>{' '}
+          {selectedCharacter?.origin?.name}
+        </p>
+        <p>
+          <span className='character-span'>Location:</span>{' '}
+          {selectedCharacter?.location?.name}
+        </p>
+        <p>
+          {' '}
+          {selectedCharacter?.episode.length} episodes
+        </p>
+        <p>
+          <span className='character-span'>Status:</span>{' '}
+          {selectedCharacter?.status}
+        </p>
+      </div>
     </div>
   );
 }

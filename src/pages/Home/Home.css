@@ -1,5 +1,5 @@
 .home-container {
-  padding: 0 3vw 0 3vw;
+  padding: 0 5vw;
 }
 .main-container {
   display: grid;
@@ -8,8 +8,43 @@
   margin-top: 50px;
   gap: 15px;
 }
-
+.initial-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 10vw;
+  height: 90vh;
+}
+.initial-view::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  background-image: url(/public/rickMain.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  z-index: -1;
+}
+.initial-view-title {
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+.initial-view-description {
+  font-size: 16px;
+  color: #a5a5a5;
+  margin-bottom: 25px;
+}
 @media only screen and (max-width: 690px) {
+  .initial-view::before {
+    filter: blur(1.2px);
+  }
+  .initial-view-description {
+    color: #000;
+  }
   .main-container {
     grid-template-columns: 1fr !important;
   }

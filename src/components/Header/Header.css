@@ -1,12 +1,26 @@
 .navbar {
+  padding-top: 20px;
+  height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  background-color: #191e38;
-  padding: 10px 3vw 10px 0;
+  justify-content: center;
+  background-color: transparent;
+}
+.logo {
+  width: 20vw;
+  margin: 0 20vw;
+  min-width: 200px;
+}
+.logo > img {
+  width: 100%;
+}
+.navbar > a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
 }
 @media only screen and (max-width: 690px) {
   .navbar {
-    justify-content: center;
+    display: none;
   }
 }

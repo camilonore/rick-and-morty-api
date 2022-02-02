@@ -10,28 +10,41 @@ import { useState } from 'react';
 
 export default function Home() {
   const [page, setPage] = useState(1);
+  const [section, setSection] = useState('character');
 
   const { loading, characters } = useCharacters({
-    section: 'character',
+    section: section,
     page: page,
-    name: null,
+    name: undefined,
   });
 
   return (
-    <div className='home-container'>
-      <SearchForm />
-      <SerieInNumbers />
-      <div className='main-container'>
-        {loading ? (
-          <Spinner />
-        ) : (
-          <>
-            <ListOfCharacters characters={characters} />
-            <SelectedCharacter />
-          </>
-        )}
+    <>
+      <div className='initial-view'>
+        <h3 className='initial-view-title'>
+          Rick and <br /> Morty Api
+        </h3>
+        <span className='initial-view-description'>
+          I hope you like the website
+        </span>
+        <SearchForm />
       </div>
-      <Pagination page={page} setPage={setPage} name={null} />
-    </div>
+      <div className='home-container'>
+        <div className='main-container'>
+          {loading ? (
+            <Spinner />
+          ) : (
+            (
+              <>
+                <ListOfCharacters characters={characters}/>
+                <SelectedCharacter />
+              </>
+            )
+          )}
+        </div>
+        <Pagination page={page} setPage={setPage} name={undefined} />
+        <SerieInNumbers />
+      </div>
+    </>
   );
 }

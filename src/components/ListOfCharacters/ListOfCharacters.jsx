@@ -2,6 +2,7 @@ import './ListOfCharacters.css';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
 export default function ListOfCharacters({ characters }) {
+
   return (
     <div className='characters-container'>
       {characters.map(({ name, status, species, image }, index) => {

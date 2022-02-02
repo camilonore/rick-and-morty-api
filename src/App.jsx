@@ -1,4 +1,3 @@
-import './App.css';
 import Home from './pages/Home/Home';
 import SearchResults from './pages/SearchResult/SearchResult';
 import Header from './components/Header/Header';

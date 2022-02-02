@@ -1,7 +1,7 @@
 import './SearchForm.css';
-import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
+import SearchIcon from '../SearchIcon/SearchIcon'
 import SelectedCharacterContext from '../../context/SelectedCharacterContext';
 
 export default function SearchForm({ setPage }) {
@@ -17,9 +17,11 @@ export default function SearchForm({ setPage }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='search-bar'>
-      <input type='text' required />
-      <Button width='200px'>Buscar</Button>
-    </form>
+    <div className='form-container'>
+      <SearchIcon height='18px' color='#c3c3c3'/>
+      <form onSubmit={handleSubmit} className='search-bar'>
+        <input type='text' required placeholder='Search...'/>
+      </form>
+    </div>
   );
 }
