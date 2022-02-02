@@ -1,0 +1,13 @@
+.no-character-container {
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+.no-character-container > img {
+  height: 100%;
+}
