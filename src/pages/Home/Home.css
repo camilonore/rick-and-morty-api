@@ -40,7 +40,7 @@
 }
 @media only screen and (max-width: 690px) {
   .initial-view::before {
-    filter: blur(1.2px);
+    filter: blur(0.7px);
   }
   .initial-view-description {
     color: #000;
