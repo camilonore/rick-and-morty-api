@@ -1,20 +1,20 @@
-import './SearchForm.css';
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import './SearchForm.css'
+import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
 import SearchIcon from '../SearchIcon/SearchIcon'
-import SelectedCharacterContext from '../../context/SelectedCharacterContext';
+import SelectedCharacterContext from '../../context/SelectedCharacterContext'
 
-export default function SearchForm({ setPage }) {
-  const navigate = useNavigate();
-  const { setSelectedCharacterId } = useContext(SelectedCharacterContext);
+export default function SearchForm ({ setPage }) {
+  const navigate = useNavigate()
+  const { setSelectedCharacterId } = useContext(SelectedCharacterContext)
 
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-    let name = evt.target[0].value;
-    navigate(`/search/${name}`);
-    setSelectedCharacterId(0);
-    setPage(1);
-  };
+    evt.preventDefault()
+    const name = evt.target[0].value
+    navigate(`/search/${name}`)
+    setSelectedCharacterId(0)
+    setPage(1)
+  }
 
   return (
     <div className='form-container'>
@@ -23,5 +23,5 @@ export default function SearchForm({ setPage }) {
         <input type='text' required placeholder='Search a character...'/>
       </form>
     </div>
-  );
+  )
 }

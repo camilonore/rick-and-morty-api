@@ -1,6 +1,6 @@
-import './Button.css';
+import './Button.css'
 
-export default function Button(
+export default function Button (
   { children, onClick, width } = { width: '100px' }
 ) {
   return (
@@ -11,5 +11,5 @@ export default function Button(
     >
       {children}
     </button>
-  );
+  )
 }

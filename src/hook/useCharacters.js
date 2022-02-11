@@ -1,33 +1,33 @@
-import { useContext, useEffect, useState } from 'react';
-import getData from '../services/getData';
-import CharactersContext from '../context/CharactersContext';
+import { useContext, useEffect, useState } from 'react'
+import getData from '../services/getData'
+import CharactersContext from '../context/CharactersContext'
 
-export function useCharacters(
+export function useCharacters (
   { section, page, name } = {
     section: undefined,
     page: undefined,
-    name: undefined,
+    name: undefined
   }
 ) {
-  const { characters, setCharacters } = useContext(CharactersContext);
-  const [loading, setLoading] = useState(true);
+  const { characters, setCharacters } = useContext(CharactersContext)
+  const [loading, setLoading] = useState(true)
 
   useEffect(
     function () {
-      setLoading(true);
+      setLoading(true)
       getData({ section, page, name }).then((character) => {
         if (character === 'error') {
-          setLoading(false);
-          setCharacters([]);
+          setLoading(false)
+          setCharacters([])
         } else {
-          console.log(character.data.results);
-          setCharacters(character.data.results);
-          setLoading(false);
+          console.log(character.data.results)
+          setCharacters(character.data.results)
+          setLoading(false)
         }
-      });
+      })
     },
     [section, page, setCharacters, name]
-  );
+  )
 
-  return { loading, characters, setCharacters };
+  return { loading, characters, setCharacters }
 }

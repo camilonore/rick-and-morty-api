@@ -1,8 +1,8 @@
-import './SerieInNumbers.css';
-import useSerieData from '../../hook/useSerieData';
+import './SerieInNumbers.css'
+import useSerieData from '../../hook/useSerieData'
 
-export default function SerieInNumbers() {
-  const [serieEpisode, serieLocation, serieDataCharacter] = useSerieData();
+export default function SerieInNumbers () {
+  const [serieEpisode, serieLocation, serieDataCharacter] = useSerieData()
 
   return (
     <div className='serie-numbers-container' id='footer'>
@@ -10,5 +10,5 @@ export default function SerieInNumbers() {
       <p>{serieLocation} Total locations</p>
       <p>{serieDataCharacter} Total characters</p>
     </div>
-  );
+  )
 }
