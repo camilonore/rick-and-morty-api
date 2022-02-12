@@ -17,7 +17,6 @@ export default function Home () {
     page: page,
     name: null
   })
-  console.log(characters)
   return (
     <>
       <div className='initial-view'>

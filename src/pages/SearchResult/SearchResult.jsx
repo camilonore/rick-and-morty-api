@@ -18,7 +18,6 @@ export default function Home () {
   const [page, setPage] = useState(1)
 
   const { loading, characters } = useCharacters({
-    section: 'character',
     page: page,
     name
   })
@@ -27,7 +26,6 @@ export default function Home () {
       <section className='search-bar'>
         <SearchForm setPage={setPage} />
       </section>
-      <section className='main-container'>
         {loading
           ? (
           <Spinner />
@@ -38,12 +36,13 @@ export default function Home () {
               )
             : (
           <>
-            <ListOfCharacters characters={characters} />
-            <SelectedCharacter characters={characters}/>
+            <section className='main-container'>
+              <ListOfCharacters characters={characters} />
+              <SelectedCharacter characters={characters}/>
+            </section>
+            <Pagination page={page} setPage={setPage} name={name} />
           </>
               )}
-      </section>
-      {loading ? '' : <Pagination page={page} setPage={setPage} name={name} />}
       <SerieInNumbers />
     </div>
   )

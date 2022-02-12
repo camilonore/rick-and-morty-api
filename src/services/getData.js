@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default function getData ({ section = null, page = null, name = null }) {
-  if (name) {
+  if (name && page === null) {
     return axios
       .get(`https://rickandmortyapi.com/api/character/?name=${name}`)
       .then(res => res)
@@ -18,6 +18,12 @@ export default function getData ({ section = null, page = null, name = null }) {
     return axios
       .get(`https://rickandmortyapi.com/api/${section}/?page=${page}`)
       .then(res => res)
-      .catch(err => err)
+      .catch(err => err.toJSON())
+  }
+  if (name && page) {
+    return axios
+      .get(`https://rickandmortyapi.com/api/character/?name=${name}&page=${page}`)
+      .then(res => res)
+      .catch(err => err.toJSON())
   }
 }
