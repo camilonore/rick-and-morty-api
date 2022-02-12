@@ -4,9 +4,9 @@ import getData from '../services/getData'
 
 export function useCharacters (
   { section, page, name } = {
-    section: undefined,
-    page: undefined,
-    name: undefined
+    section: null,
+    page: null,
+    name: null
   }
 ) {
   const [characters, setCharacters] = useState([])
@@ -16,7 +16,7 @@ export function useCharacters (
     function () {
       setLoading(true)
       getData({ section, page, name }).then((character) => {
-        if (character === 'error') {
+        if (character.status === 404) {
           setLoading(false)
           setCharacters([])
         } else {

@@ -1,4 +1,5 @@
 import './Button.css'
+import PropTypes from 'prop-types'
 
 export default function Button (
   { children, onClick, width } = { width: '100px' }
@@ -12,4 +13,9 @@ export default function Button (
       {children}
     </button>
   )
+}
+Button.propTypes = {
+  children: PropTypes.elementType,
+  onClick: PropTypes.func,
+  width: PropTypes.string
 }

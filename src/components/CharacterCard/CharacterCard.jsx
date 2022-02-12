@@ -1,6 +1,9 @@
 import './CharacterCard.css'
-import SelectedCharacterContext from '../../context/SelectedCharacterContext'
 import { useContext } from 'react'
+
+import PropTypes from 'prop-types'
+
+import SelectedCharacterContext from '../../context/SelectedCharacterContext'
 
 export default function CharacterCard ({ id, name, status, species, image }) {
   const { setSelectedCharacterId } = useContext(SelectedCharacterContext)
@@ -18,4 +21,12 @@ export default function CharacterCard ({ id, name, status, species, image }) {
       <img src={image} alt={name} onClick={handleDetails(id)} className='character-image' />
     </button>
   )
+}
+
+CharacterCard.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  status: PropTypes.string,
+  species: PropTypes.string,
+  image: PropTypes.string
 }

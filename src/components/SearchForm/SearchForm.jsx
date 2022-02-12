@@ -1,8 +1,11 @@
 import './SearchForm.css'
-import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import SearchIcon from '../SearchIcon/SearchIcon'
+
+import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
+
 import SelectedCharacterContext from '../../context/SelectedCharacterContext'
+import SearchIcon from '../SearchIcon/SearchIcon'
 
 export default function SearchForm ({ setPage }) {
   const navigate = useNavigate()
@@ -24,4 +27,8 @@ export default function SearchForm ({ setPage }) {
       </form>
     </div>
   )
+}
+
+SearchForm.propTypes = {
+  setPage: PropTypes.func
 }

@@ -1,9 +1,11 @@
 import './SelectedCharacter.css'
 import { useContext, useEffect, useState } from 'react'
+
+import PropTypes from 'prop-types'
+
 import SelectedCharacterContext from '../../context/SelectedCharacterContext'
 
 export default function SelectedCharacter ({ characters }) {
-  console.log(characters)
   const [selectedCharacter, setSelectedCharacter] = useState(characters[0])
   const { selectedCharacterId } = useContext(SelectedCharacterContext)
 
@@ -61,4 +63,8 @@ export default function SelectedCharacter ({ characters }) {
       </div>
     </div>
   )
+}
+
+SelectedCharacter.propTypes = {
+  characters: PropTypes.array
 }

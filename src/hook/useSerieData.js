@@ -8,12 +8,15 @@ export default function useSerieData () {
   const [serieDataCharacter, setSerieDataCharacter] = useState('')
 
   useEffect(() => {
-    getData({ section: 'episode' }).then((res) =>
+    getData({ section: 'episode' }).then((res) => {
       setSerieEpisode(res.data.info.count)
+    }
     )
+
     getData({ section: 'location' }).then((res) =>
       setSerieLocation(res.data.info.count)
     )
+
     getData({ section: 'character' }).then((res) =>
       setSerieDataCharacter(res.data.info.count)
     )

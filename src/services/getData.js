@@ -1,25 +1,23 @@
 import axios from 'axios'
 
-export default function getData ({ section, page, name }) {
-  if (name && page > 1) {
-    return axios
-      .get(
-        `https://rickandmortyapi.com/api/character/?name=${name}&page=${page}`
-      )
-      .then((res) => res)
-  }
+export default function getData ({ section = null, page = null, name = null }) {
   if (name) {
     return axios
       .get(`https://rickandmortyapi.com/api/character/?name=${name}`)
-      .then((res) => res)
-      .catch((err) => console.error(err))
+      .then(res => res)
+      .catch(err => err.toJSON())
   }
-  if (page === undefined) {
+  if (section && page === null) {
     return axios
       .get(`https://rickandmortyapi.com/api/${section}`)
-      .then((res) => res)
+      .then(res => res)
+      .catch(err => err.toJSON())
   }
-  return axios
-    .get(`https://rickandmortyapi.com/api/${section}/?page=${page}`)
-    .then((res) => res)
+
+  if (section && page) {
+    return axios
+      .get(`https://rickandmortyapi.com/api/${section}/?page=${page}`)
+      .then(res => res)
+      .catch(err => err)
+  }
 }

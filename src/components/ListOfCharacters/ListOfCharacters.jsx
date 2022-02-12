@@ -1,4 +1,6 @@
 import './ListOfCharacters.css'
+import PropTypes from 'prop-types'
+
 import CharacterCard from '../CharacterCard/CharacterCard'
 
 export default function ListOfCharacters ({ characters }) {
@@ -18,4 +20,7 @@ export default function ListOfCharacters ({ characters }) {
       })}
     </div>
   )
+}
+ListOfCharacters.propTypes = {
+  characters: PropTypes.array
 }
