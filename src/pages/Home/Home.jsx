@@ -10,10 +10,9 @@ import { useState } from 'react'
 
 export default function Home () {
   const [page, setPage] = useState(1)
-  const [section, setSection] = useState('character')
 
   const { loading, characters } = useCharacters({
-    section: section,
+    section: 'character',
     page: page,
     name: undefined
   })
@@ -38,7 +37,7 @@ export default function Home () {
             : (
             <>
               <ListOfCharacters characters={characters} />
-              <SelectedCharacter />
+              <SelectedCharacter characters={characters}/>
             </>
               )}
         </section>

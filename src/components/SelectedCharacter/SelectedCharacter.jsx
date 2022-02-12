@@ -1,10 +1,9 @@
 import './SelectedCharacter.css'
 import { useContext, useEffect, useState } from 'react'
-import CharactersContext from '../../context/CharactersContext'
 import SelectedCharacterContext from '../../context/SelectedCharacterContext'
 
-export default function SelectedCharacter () {
-  const { characters } = useContext(CharactersContext)
+export default function SelectedCharacter ({ characters }) {
+  console.log(characters)
   const [selectedCharacter, setSelectedCharacter] = useState(characters[0])
   const { selectedCharacterId } = useContext(SelectedCharacterContext)
 

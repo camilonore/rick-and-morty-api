@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+
 import getData from '../services/getData'
-import CharactersContext from '../context/CharactersContext'
 
 export function useCharacters (
   { section, page, name } = {
@@ -9,7 +9,7 @@ export function useCharacters (
     name: undefined
   }
 ) {
-  const { characters, setCharacters } = useContext(CharactersContext)
+  const [characters, setCharacters] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(
@@ -20,7 +20,6 @@ export function useCharacters (
           setLoading(false)
           setCharacters([])
         } else {
-          console.log(character.data.results)
           setCharacters(character.data.results)
           setLoading(false)
         }

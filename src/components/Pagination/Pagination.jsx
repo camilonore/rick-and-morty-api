@@ -2,6 +2,7 @@ import './Pagination.css'
 import Button from '../Button/Button'
 import getDatata from '../../services/getData'
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 export default function Pagination ({ page, setPage, name }) {
   const [maxPage, setMaxPage] = useState(0)
@@ -24,4 +25,9 @@ export default function Pagination ({ page, setPage, name }) {
       {page < maxPage ? <Button onClick={hanldeNext}>Next</Button> : ''}
     </div>
   )
+}
+Pagination.propTypes = {
+  page: PropTypes.number,
+  setPage: PropTypes.func,
+  name: PropTypes.string
 }

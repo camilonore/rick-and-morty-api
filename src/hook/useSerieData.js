@@ -1,5 +1,6 @@
-import getData from '../services/getData'
 import { useEffect, useState } from 'react'
+
+import getData from '../services/getData'
 
 export default function useSerieData () {
   const [serieEpisode, setSerieEpisode] = useState('')

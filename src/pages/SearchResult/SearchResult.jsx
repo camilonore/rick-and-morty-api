@@ -1,14 +1,16 @@
-import './SearchResult.css'
-import SearchForm from '../../components/SearchForm/SearchForm'
-import SerieInNumbers from '../../components/SerieInNumbers/SerieInNumbers'
-import SelectedCharacter from '../../components/SelectedCharacter/SelectedCharacter'
-import ListOfCharacters from '../../components/ListOfCharacters/ListOfCharacters'
-import { useCharacters } from '../../hook/useCharacters'
-import Spinner from '../../components/Spinner/Spinner'
-import { useParams } from 'react-router-dom'
-import Pagination from '../../components/Pagination/Pagination'
 import { useState } from 'react'
+
+import { useParams } from 'react-router-dom'
+
+import './SearchResult.css'
+import ListOfCharacters from '../../components/ListOfCharacters/ListOfCharacters'
 import NoCharacter from '../../components/NoCharacter/NoCharacter'
+import Pagination from '../../components/Pagination/Pagination'
+import SearchForm from '../../components/SearchForm/SearchForm'
+import SelectedCharacter from '../../components/SelectedCharacter/SelectedCharacter'
+import SerieInNumbers from '../../components/SerieInNumbers/SerieInNumbers'
+import Spinner from '../../components/Spinner/Spinner'
+import { useCharacters } from '../../hook/useCharacters'
 
 export default function Home () {
   const { name } = useParams()
@@ -37,7 +39,7 @@ export default function Home () {
             : (
           <>
             <ListOfCharacters characters={characters} />
-            <SelectedCharacter />
+            <SelectedCharacter characters={characters}/>
           </>
               )}
       </section>
